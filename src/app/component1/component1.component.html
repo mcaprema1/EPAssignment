@@ -1,0 +1,51 @@
+<div class="right" *ngIf="demo">
+    <section>
+      <h3>
+        Employees
+     </h3>
+      <table id="table" >
+        <tr>
+          <th>
+            Emp Id
+          </th>
+          <th>
+            First name
+          </th>
+          <th>
+            Last Name
+          </th>
+          <th>
+            Email
+          </th>
+          <th>
+            Mobile
+          </th>
+          <th>
+            Address
+          </th>
+        </tr>
+        
+          <tr *ngFor="let d of demo | async; let i = index" (click)="removeFromTable(i)">
+            <td>
+              {{d.empId}}
+            </td>
+            <td>
+              {{d.first_name}}
+            </td>
+            <td>
+                {{d.last_name}}
+            </td>
+            <td>
+                {{d.emailID}}
+            </td>
+            <td>
+                {{d.mobile}}
+            </td>
+            <td>
+                {{d.address}}
+            </td>
+          </tr>
+        
+      </table>
+    </section>
+  </div>

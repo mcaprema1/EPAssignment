@@ -1,0 +1,25 @@
+
+<app-projects-list></app-projects-list> <br><br>
+<div>
+    <!-- <input type="text" #name placeholder="Your Name">
+    <input type="text" #gender placeholder="Gender"> -->
+    <form [formGroup]="projectsForm">
+    <div class="row">
+        <div class="col-md-6">
+            <input type="text" #projid placeholder="ProjectId">
+        </div> &nbsp;
+        <div class="col-lg-6">
+            <input type="text" #projname placeholder="Project Name" class="form-control" 
+                formControlName="projectName">
+        </div>&nbsp;
+        <div class="col-lg-6">
+            <textarea type="text" #description placeholder="Description" class="form-control" 
+        formControlName="description"> </textarea>
+        </div>
+    </div>
+    <br><br>
+    <button (click)="addToProjectsStore(projid.value, projname.value, description.value)">Add to Table</button>
+    &nbsp;&nbsp;<button (click)="backHome()">Back Home</button>
+   </form>
+</div>
+

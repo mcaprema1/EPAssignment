@@ -1,0 +1,36 @@
+<div class="right" >
+    <section>
+      <h3>
+        NgRx Projects
+      </h3>
+      <form [formGroup]="assignProjectForm">
+      <table id="table" >
+        <tr>
+          <th> Project Id </th>
+          <th> Project Name </th>
+          <th> Description</th>
+          <th> Assign Employee</th>
+        </tr>
+          <tr *ngFor="let d of projects | async; let i = index" (click)="removeFromTable(i)">
+            <td>
+              {{d.proId}}
+            </td>
+            <td>
+              {{d.project_name}}
+            </td>
+            <td>
+                {{d.description}}
+            </td>
+            <td>
+                <select  class="form-control"  
+                formControlName="assignProject" (change)="selectedEmployee(d,$event)">
+                    <option *ngFor="let x of demo" [value]="x.first_name" >
+                    {{x.first_name}}</option>
+                </select>
+            </td>
+          </tr>
+        
+      </table>
+    </form>
+    </section>
+  </div>

@@ -1,0 +1,36 @@
+<app-component1></app-component1>
+<div>
+  &nbsp;
+  <form [formGroup]="employeeForm">
+    <div class="row">
+      <div class="col-md-8">
+        <input type="text" #empid placeholder="EmployeeId">
+      </div> &nbsp;
+      <div class="col-md-8">
+        <input type="text" #first_name placeholder="First Name" required min="3" class="form-control"
+          formControlName="first_name">
+          <div *ngIf="f['first_name'].errors && f['first_name'].errors['required']">
+           <span style="font-size:12px"> Frist Name is required </span> 
+          </div> 
+      </div> &nbsp;
+       
+      <div class="col-md-8">
+        <input type="text" #last_name placeholder="Last Name" required min="3" class="form-control"
+          formControlName="last_name">
+      </div> &nbsp;
+      <div class="col-md-8">
+        <input type="email" #email placeholder="Email">
+      </div> &nbsp;
+      <div class="col-md-8">
+        <input type="text" #mobile placeholder="Mobile">
+      </div> &nbsp;
+      <div class="col-md-8">
+        <textarea type="text" #address placeholder="Address"> </textarea>
+      </div> &nbsp;&nbsp;
+      <button (click)="addToStore(empid.value, first_name.value, last_name.value,
+    email.value, mobile.value, address.value)">Add to Table</button> &nbsp;
+    <button (click)="backHome()">Back Home</button>
+    </div>
+  </form>
+</div>
+
