@@ -1,0 +1,25 @@
+<table id="table" *ngIf="all_assignedProject" >
+    <tr>
+      <th> Project Id </th>
+      <th> Project Name </th>
+      <th> Description</th>
+      <th> Assigned Employee</th>
+    </tr>
+      <tr *ngFor="let d of all_assignedProject | async; let i = index" >
+        <td>
+          {{d.proId}}
+        </td>
+        <td>
+          {{d.project_name}}
+        </td>
+        <td>
+            {{d.description}}
+        </td>
+        <td>
+            {{d.Project_assigned_To}}
+        </td>
+      </tr>
+    
+  </table>
+
+  <h3 *ngIf="this.len===0"style="text-align: center;"> No Assignment made yet </h3>

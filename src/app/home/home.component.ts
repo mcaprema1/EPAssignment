@@ -20,4 +20,7 @@ export class HomeComponent {
   navigatetoProjects(){
     this.router.navigate(['project'])
   }
+  listAssignedProjects(){
+    this.router.navigate(['assigned'])
+  }
 }

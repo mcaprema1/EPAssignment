@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ProjectsComponent } from './projects/projects.component';
 import { projectreducer } from './reducers/project.reducer';
 import { ProjectsListComponent } from './projects-list/projects-list.component';
+import { ListAssignedProjectsComponent } from './list-assigned-projects/list-assigned-projects.component';
+import { assignedReducer } from './reducers/assigned.reducer';
 
 let rootReducer = {
   demoStore: demoReducer,
@@ -24,7 +26,8 @@ let rootReducer = {
     Component2Component,
     HomeComponent,
     ProjectsComponent,
-    ProjectsListComponent
+    ProjectsListComponent,
+    ListAssignedProjectsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ let rootReducer = {
     ReactiveFormsModule,
     StoreModule.forRoot({
       demoStore: demoReducer, 
-      projectStore : projectreducer
+      projectStore : projectreducer,
+      assignedStore : assignedReducer
     })
   ],
   providers: [],

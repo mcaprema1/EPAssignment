@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 import { Demo } from '../models/demo.modal';
-import { Projects } from '../models/projects.modal';
+import { Projects, AssignedProjects } from '../models/projects.modal';
 
 export const ADD_DEMO = 'Add Demo';
 export const REMOVE_DEMO = 'Remove Demo';
@@ -25,8 +25,8 @@ export class AddProjects implements Action {
 }
 export class UpdateProjects implements Action {   
     readonly type = UPDATE_PROJECT;
-    constructor(public payload: Projects) {
-        console.log("add Proj action ", this.type);
+    constructor(public payload: AssignedProjects) {
+        console.log("Update action ", this.type);
     }
 }
 export type Actions = AddDemo | RemoveDemo | AddProjects | UpdateProjects;

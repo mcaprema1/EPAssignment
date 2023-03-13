@@ -1,30 +1,28 @@
 import { Action } from "@ngrx/store";
-import { Projects } from "../models/projects.modal";
+import { AssignedProjects } from "../models/projects.modal";
 import * as DemoActions from './../actions/demo.actions';
 
-const initialState: Projects = {
-    proId: '11025',
-    project_name: 'LIB',
-    description : 'AI Project',
+const initialState: AssignedProjects = {
+    proId: '',
+    project_name: '',
+    description : '',
 }
-
-export function projectreducer(state: Projects[] = [initialState], action: Action) {
+export function assignedReducer(state: AssignedProjects[] = [initialState], action: Action) {
     const tutorialAction = action as DemoActions.Actions; 
     console.log("reducers projectreducer: ", tutorialAction.type)
     switch(tutorialAction.type) {
-        case DemoActions.ADD_PROJECT:
-            return [...state, tutorialAction.payload];
+        // case DemoActions.ADD_PROJECT:
+        //     return [...state, tutorialAction.payload];
         case DemoActions.UPDATE_PROJECT:
+            return [...state, tutorialAction.payload];
             // {
             // export const getSelectedrecord = (id: string) =>
         //     createSelector(state, getSelectedId, (state) => {
         //         return state.find((data) => data.id === id);
         //     });
         // }
-            return [...state, tutorialAction.payload];
+           
         default:
             return state;
     }
 }   
-
-   
